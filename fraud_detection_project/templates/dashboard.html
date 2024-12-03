@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1>Welcome to Fraud Detection Dashboard</h1>
+            <p>Navigate through the sections or upload your transaction PDFs for analysis.</p>
+            <button class="btn" onclick="scrollToSection('upload')">Get Started</button>
+        </header>
+
+        <nav class="navigation">
+            <ul>
+                <li><a href="#upload" onclick="scrollToSection('upload')">Upload</a></li>
+                <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+                <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section id="upload" class="section">
+            <h2>Upload Your Transaction PDF</h2>
+            <p>Ensure your PDF meets the following criteria:</p>
+            <ul>
+                <li>The PDF file must be unlocked.</li>
+                <li>Transaction date must be in the format: <strong>YYYY-MM-DD</strong>.</li>
+                <li>Ensure data consistency for accurate predictions.</li>
+            </ul>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <label for="file" class="upload-label">
+                    <i class="fa fa-upload"></i> Choose PDF File
+                </label>
+                <input type="file" id="file" name="file" accept=".pdf">
+                <button type="submit" class="btn">Upload</button>
+            </form>
+        </section>
+
+        <section id="about" class="section">
+            <h2>About the Project</h2>
+            <p>
+                This project aims to detect fraudulent transactions efficiently using machine learning.
+                Our system leverages advanced algorithms to identify unusual patterns, ensuring financial security.
+            </p>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <form action="/contact" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+        function showSuccessPopup() {
+            alert("File has been successfully uploaded!");
+            window.location.href = "/analysis"; // Redirect to analysis page
+        }
+    </script>
+</body>
+</html>

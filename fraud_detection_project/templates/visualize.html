@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualization Options</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/visualize.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="hero">
+            <h1>Visualization Options</h1>
+            <p>Select the type of analysis you want to explore:</p>
+        </header>
+
+        <!-- Buttons -->
+        <section class="options">
+            <button class="btn" onclick="location.href='/static/images/classification_report.png'">
+                Model Analysis
+            </button>
+            <button class="btn" onclick="location.href='/static/images/fraudulent_distribution.png'">
+                Prediction Data Analysis
+            </button>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Fraud Detection Project. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

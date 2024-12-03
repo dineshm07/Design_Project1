@@ -1,0 +1,115 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #7a3e2d; /* Reddish Brown Background */
+    color: white;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Section */
+header {
+    background-color: #4e2c1d; /* Darker reddish brown */
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Section for buttons (Centered) */
+.analysis-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.analysis-options .btn {
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #9e5e3a; /* Lighter Reddish Brown */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.analysis-options .btn:hover {
+    background-color: #c47c53; /* Even lighter reddish brown */
+    transform: translateY(-5px); /* Button rises slightly on hover */
+}
+
+.analysis-options .btn:focus {
+    outline: none;
+}
+
+.analysis-options .btn:active {
+    transform: translateY(1px); /* Button presses down on click */
+}
+
+/* Footer Section */
+footer {
+    background-color: #4e2c1d; /* Darker reddish brown */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .analysis-options {
+        flex-direction: column;
+    }
+
+    .analysis-options .btn {
+        width: 100%;
+    }
+}
